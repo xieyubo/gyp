@@ -16,6 +16,7 @@ import sys
 from gyp.common import OrderedSet
 import gyp.MSVSUtil
 import gyp.MSVSVersion
+from gyp.MSVSVersion import version_to_tuple
 
 try:
   # basestring was removed in python3.
