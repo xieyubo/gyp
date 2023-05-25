@@ -110,6 +110,9 @@ class VisualStudioVersion(object):
       if host_arch != msvc_target_arch:
         arg += '_' + msvc_target_arch
 
+      override_vcvars_ver = os.environ.get('GYP_MSVS_OVERRIDE_VCVARS_VER')
+      if override_vcvars_ver is not None:
+        return [script_path, arg, "-vcvars_ver=" + override_vcvars_ver]
       return [script_path, arg]
 
     # We try to find the best version of the env setup batch.
